@@ -1,21 +1,13 @@
-const ratio = 0.1
-const options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: ratio
-  }
-  
-  const Intersection = function(entries, observer){
-    entries.forEach(function(entry){
-        if(entry.intersectionRatio > ratio){
-            entry.target.classList.add('show-visible')
-            observer.unobserve(entry.target)
-        }
-    })
-    
-  }
+const slidingSection = document.querySelector('.containeur-second')
 
-  const observer = new IntersectionObserver(Intersection, options);
-  document.querySelectorAll('show').forEach(function(r){
-      observer.observe(r)
-  })
+
+window.addEventListener('scroll', ()=>{
+    const {scrollTop, clientHeight}=
+        document.documentElement;
+
+        const TopElementToTopViewport = slidingSection.getBoundingClientRect().top;
+        if(scrollTop >(scrollTop + TopElementToTopViewport).toFixed() - clientHeight * 0.30){
+            slidingSection.classList.add('slide-in-active')
+        }
+})
+
