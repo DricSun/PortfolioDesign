@@ -683,9 +683,19 @@ body {
   .third-section .title-skills h2 {
     font-size: 40px;
   }
+  .third-section .contain-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .third-section .contain-grid .grid-logos {
     padding-left: 40px;
     top: 50%;
+    -ms-grid-columns: (50px)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 50px);
   }
   .fourth-section .title-projects hr {
     width: 10%;

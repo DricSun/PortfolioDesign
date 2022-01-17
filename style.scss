@@ -651,12 +651,14 @@ body {
         }
 
         .contain-grid {
-
+            display: flex;
+            justify-content: center;
 
 
             .grid-logos {
                 padding-left: 40px;
                 top: 50%;
+                grid-template-columns: repeat(auto-fill,  50px);
             }
         }
     }
